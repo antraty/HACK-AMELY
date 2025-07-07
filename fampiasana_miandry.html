@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="mg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduPlateforme MG - Fampiasana miandry</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root { --loko-fototra: #0E3C65; --loko-fototra-maivana: #1a5a92; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .tany-fototra { background-color: #f8f9fa; min-height: 100vh; }
+        .lohany { background-color: var(--loko-fototra); color: white; padding: 15px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);}
+        .menu-ankavia { background-color: white; height: 100vh; position: fixed; width: 250px; box-shadow: 2px 0 5px rgba(0,0,0,0.1); transition: transform 0.3s ease; z-index:1000;}
+        .menu-ankavia a { color: #333; padding: 10px 15px; display: block; text-decoration: none; border-left: 3px solid transparent; transition: all 0.3s;}
+        .menu-ankavia a:hover { background-color: #f0f0f0; border-left: 3px solid var(--loko-fototra);}
+        .menu-ankavia a i { margin-right: 10px; color: var(--loko-fototra);}
+        .votoaty { margin-left: 250px; padding: 20px; transition: margin 0.3s ease;}
+        .tongotra { background-color: var(--loko-fototra); color: white; padding: 20px 0; margin-top: 30px;}
+        .tsindry-hamburger { display: none; background: none; border: none; color: white; font-size: 24px;}
+        @media (max-width: 768px) {
+            .menu-ankavia { transform: translateX(-100%);}
+            .menu-ankavia.miseho { transform: translateX(0);}
+            .votoaty { margin-left: 0;}
+            .tsindry-hamburger { display: block;}
+        }
+    </style>
+</head>
+<body class="tany-fototra">
+    <header class="lohany">
+        <div class="container-fluid">
+            <div class="d-flex justify-content-between align-items-center">
+                <button class="tsindry-hamburger" id="tsindry-hamburger">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h1 class="h4 mb-0">EduPlateforme MG</h1>
+                <div class="d-flex align-items-center">
+                    <span class="me-3">Tongasoa!</span>
+                    <img src="https://via.placeholder.com/40" alt="Sarin'ny mpampiasa" class="rounded-circle">
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav class="menu-ankavia" id="menu-ankavia">
+        <div class="pt-3 pb-2 text-center">
+            <img src="https://via.placeholder.com/80" alt="Logo" class="rounded-circle mb-2">
+            <h5 class="mb-0">Ny kaontinao</h5>
+        </div>
+        <div class="mt-3">
+            <a href="naoty.html"><i class="fas fa-chart-line"></i> Ireo naoty</a>
+            <a href="fampiasana_miandry.html"><i class="fas fa-tasks"></i> Ireo fampiasana miandry</a>
+            <a href="fandaharam_potoana.html"><i class="fas fa-calendar-alt"></i> Fandaharam-potoana</a>
+            <a href="#" id="sokajy-fianarana">
+                <i class="fas fa-book"></i> Sokajy fianarana
+                <i class="fas fa-chevron-down float-end mt-1" id="chevron-sokajy"></i>
+            </a>
+            <div class="lisitra-sokajy" id="lisitra-sokajy" style="max-height: 0;">
+                <a href="sokajy_manokana.html">Matematika</a>
+                <a href="#">Fizika</a>
+                <a href="#">Biôlôjia</a>
+                <a href="#">Historia</a>
+                <a href="#">Français</a>
+                <a href="#">Anglisy</a>
+            </div>
+            <a href="vaovao.html"><i class="fas fa-newspaper"></i> Ireo vaovao samihafa</a>
+        </div>
+    </nav>
+    <main class="votoaty" id="votoaty">
+        <div class="container-fluid">
+            <h2><i class="fas fa-tasks me-2"></i> Ireo fampiasana/devoirs miandry</h2>
+            <div class="card shadow-sm mt-4">
+                <div class="card-header bg-white">
+                    <h5 class="mb-0">Devoirs tsy mbola natolotra</h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Matière</th>
+                                    <th>Lohateny</th>
+                                    <th>Daty farany</th>
+                                    <th>Karazana</th>
+                                    <th>Hetsika</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Matematika</td>
+                                    <td>Devoir maison: Limite</td>
+                                    <td>15/10/2025</td>
+                                    <td>Devoir</td>
+                                    <td>
+                                        <a href="#" class="btn btn-sm btn-primary"><i class="fas fa-upload"></i> Mandefa</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Français</td>
+                                    <td>Rédaction sur la biodiversité</td>
+                                    <td>17/10/2025</td>
+                                    <td>Rédaction</td>
+                                    <td>
+                                        <a href="#" class="btn btn-sm btn-primary"><i class="fas fa-upload"></i> Mandefa</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Fizika</td>
+                                    <td>TP Optique</td>
+                                    <td>20/10/2025</td>
+                                    <td>TP</td>
+                                    <td>
+                                        <a href="#" class="btn btn-sm btn-primary"><i class="fas fa-upload"></i> Mandefa</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Matematika</td>
+                                    <td>Exercice fonction exponentielle</td>
+                                    <td>18/10/2025</td>
+                                    <td>Exercice</td>
+                                    <td>
+                                        <a href="#" class="btn btn-sm btn-primary"><i class="fas fa-upload"></i> Mandefa</a>
+                                    </td>
+                                </tr>
+                                <!-- Ajoute d'autres devoirs ici si besoin -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="alert alert-info mt-3">
+                        <i class="fas fa-info-circle"></i> <b>Fanamarihana :</b> Azafady, jereo tsara ny daty farany handefasana!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="tongotra">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>EduPlateforme MG</h5>
+                    <p>Platforme fianarana malagasy</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-white me-3">Ireo fitsipika mifehy</a>
+                    <a href="#" class="text-white me-3">Tahirin-kevitra</a>
+                    <a href="#" class="text-white">Momba ny fampiasana</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('tsindry-hamburger').addEventListener('click', function() {
+            document.getElementById('menu-ankavia').classList.toggle('miseho');
+        });
+        document.getElementById('sokajy-fianarana').addEventListener('click', function(e) {
+            e.preventDefault();
+            const l = document.getElementById('lisitra-sokajy');
+            l.classList.toggle('miseho');
+            l.style.maxHeight = l.classList.contains('miseho') ? '500px':'0';
+            const chevron = document.getElementById('chevron-sokajy');
+            chevron.classList.toggle('fa-chevron-down');
+            chevron.classList.toggle('fa-chevron-up');
+        });
+        document.getElementById('menu-ankavia').addEventListener('transitionend', function() {
+            if (!this.classList.contains('miseho')) {
+                document.getElementById('votoaty').style.marginLeft = '0';
+            } else {
+                document.getElementById('votoaty').style.marginLeft = '250px';
+            }
+        });
+    </script>
+</body>
+</html>

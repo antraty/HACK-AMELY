@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="mg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fampidirana - Hiditra</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .tany-mainty {
+            background-color: #f0f2f5;
+            min-height: 100vh;
+            padding-top: 50px;
+        }
+        .trano-fampidirana {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .sary-famantarana {
+            display: block;
+            margin: 0 auto 20px;
+            max-width: 200px;
+        }
+        .tandrokely {
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+        .boky-fampidirana {
+            margin-bottom: 15px;
+        }
+        .boky-fampidirana label {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        .boky-fampidirana select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        .tsindry-hiditra {
+            background-color: #1877f2;
+            border: none;
+            color: white;
+            font-weight: bold;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        .tsindry-hiditra:hover {
+            background-color: #166fe5;
+        }
+        .rohy-fisoratana {
+            color: #1877f2;
+            text-decoration: none;
+        }
+        .rohy-fisoratana:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body class="tany-mainty">
+    <div class="container">
+        <div class="trano-fampidirana">
+            <!-- Sary famantarana (Logo) -->
+            <img src="/images/logo.png" alt="sary-famantarana" class="sary-famantarana">
+            
+            <h2 class="tandrokely">Hiditra ao amin'ny rafitra</h2>
+            
+            <!-- Formulaire de connexion -->
+            <form id="endrika-fampidirana" onsubmit="manaoFampidirana(event)">
+                <!-- Champ Anarana -->
+                <div class="mb-3 boky-fampidirana">
+                    <label for="anarana" class="form-label">Fanondro</label>
+                    <input type="text" class="form-control" id="anarana" placeholder="Ampidiro ny fanondronao" required>
+                </div>
+                
+                <!-- Sokajy Tenimiafina -->
+                <div class="mb-3 boky-fampidirana">
+                    <label for="tenimiafina" class="form-label">Tenimiafina</label>
+                    <input type="password" class="form-control" id="tenimiafina" placeholder="Ampidiro ny tenimiafinao" required>
+                </div>
+                
+                
+                <!-- Bouton Hiditra -->
+                <button type="submit" class="btn tsindry-hiditra">Hiditra</button>
+                
+                <!-- Lien mankany amin'ny fisoratana anarana -->
+                <div class="text-center">
+                    <p>Mbola tsy manana kaonty? <a href="#" class="rohy-fisoratana">Hisoratra anarana</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Fonction pour gérer la connexion
+        function manaoFampidirana(event) {
+            event.preventDefault();
+            
+            // Récupérer les valeurs
+            const anarana = document.getElementById('anarana').value;
+            const tenimiafina = document.getElementById('tenimiafina').value;
+            const andraikitra = document.getElementById('andraikitra').value;
+            
+            // Ici, vous pouvez ajouter la logique de vérification
+            console.log("Anarana:", anarana);
+            console.log("Tenimiafina:", tenimiafina);
+            console.log("Andraikitra:", andraikitra);
+            
+            // Exemple de redirection après connexion
+            // window.location.href = "pejy_fandraisana.html";
+            
+            alert("Efa nampidirina ny kaontinao! (Fangatahana ho voamarina)");
+        }
+    </script>
+</body>
+</html>

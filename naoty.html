@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="mg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduPlateforme MG - Ireo naoty</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Styles identiques à la page d'accueil */
+        :root { --loko-fototra: #0E3C65; --loko-fototra-maivana: #1a5a92; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .tany-fototra { background-color: #f8f9fa; min-height: 100vh; }
+        .lohany { background-color: var(--loko-fototra); color: white; padding: 15px 0; }
+        .menu-ankavia { background-color: white; height: 100vh; position: fixed; width: 250px; }
+        .votoaty { margin-left: 250px; padding: 20px; }
+        .tongotra { background-color: var(--loko-fototra); color: white; padding: 20px 0; margin-top: 30px; }
+        .tsindry-hamburger { display: none; }
+        @media (max-width: 768px) {
+            .menu-ankavia { transform: translateX(-100%); }
+            .menu-ankavia.miseho { transform: translateX(0); }
+            .votoaty { margin-left: 0; }
+            .tsindry-hamburger { display: block; }
+        }
+        
+        /* Styles spécifiques */
+        .boite-vaovao {
+            background-color: #e8f4fd;
+            border-left: 4px solid var(--loko-fototra);
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .table-naoty th {
+            background-color: var(--loko-fototra);
+            color: white;
+        }
+        .moyenne {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--loko-fototra);
+        }
+        :root {
+            --loko-fototra: #0E3C65;
+            --loko-fototra-maivana: #1a5a92;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        /* Takelaka lehibe */
+        .tany-fototra {
+            background-color: #f8f9fa;
+            min-height: 100vh;
+        }
+        
+        /* Lohan-taratasy */
+        .lohany {
+            background-color: var(--loko-fototra);
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        /* Menu ankavia */
+        .menu-ankavia {
+            background-color: white;
+            height: 100vh;
+            position: fixed;
+            width: 250px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .menu-ankavia a {
+            color: #333;
+            padding: 10px 15px;
+            display: block;
+            text-decoration: none;
+            border-left: 3px solid transparent;
+            transition: all 0.3s;
+        }
+        
+        .menu-ankavia a:hover {
+            background-color: #f0f0f0;
+            border-left: 3px solid var(--loko-fototra);
+        }
+        
+        .menu-ankavia a i {
+            margin-right: 10px;
+            color: var(--loko-fototra);
+        }
+        
+        /* Fototry ny votoaty */
+        .votoaty {
+            margin-left: 250px;
+            padding: 20px;
+            transition: margin 0.3s ease;
+        }
+        
+        /* Takelaka fandraisana */
+        .takelaka-fandraisana {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        /* Boky fanamarihana */
+        .boky-fanamarihana {
+            background-color: #f8f9fa;
+            border-left: 4px solid var(--loko-fototra);
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        /* Tongotra */
+        .tongotra {
+            background-color: var(--loko-fototra);
+            color: white;
+            padding: 20px 0;
+            margin-top: 30px;
+        }
+        
+        /* Button hamburger pour mobile */
+        .tsindry-hamburger {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+        }
+        
+        /* Fomba ho an'ny finday */
+        @media (max-width: 768px) {
+            .menu-ankavia {
+                transform: translateX(-100%);
+            }
+            
+            .menu-ankavia.miseho {
+                transform: translateX(0);
+            }
+            
+            .votoaty {
+                margin-left: 0;
+            }
+            
+            .tsindry-hamburger {
+                display: block;
+            }
+        }
+        
+        /* Sokajy fianarana */
+        .lisitra-sokajy {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding-left: 20px;
+        }
+        
+        .lisitra-sokajy.miseho {
+            max-height: 500px;
+        }
+    </style>
+</head>
+<body class="tany-fototra">
+    <!-- Header identique -->
+    <header class="lohany">
+        <div class="container-fluid">
+            <div class="d-flex justify-content-between align-items-center">
+                <button class="tsindry-hamburger" id="tsindry-hamburger">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h1 class="h4 mb-0">EduPlateforme MG</h1>
+                <div class="d-flex align-items-center">
+                    <span class="me-3">Tongasoa!</span>
+                    <img src="https://via.placeholder.com/40" alt="Sarin'ny mpampiasa" class="rounded-circle">
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <nav class="menu-ankavia" id="menu-ankavia">
+        <div class="pt-3 pb-2 text-center">
+            <img src="https://via.placeholder.com/80" alt="Logo" class="rounded-circle mb-2">
+            <h5 class="mb-0">Ny kaontinao</h5>
+        </div>
+        
+        <div class="mt-3">
+            <a href="#"><i class="fas fa-chart-line"></i> Ireo naoty</a>
+            <a href="#"><i class="fas fa-tasks"></i> Ireo fampiasana miandry</a>
+            <a href="#"><i class="fas fa-calendar-alt"></i> Fandaharam-potoana</a>
+            
+            <!-- Sokajy fianarana miangona -->
+            <a href="#" id="sokajy-fianarana">
+                <i class="fas fa-book"></i> Sokajy fianarana
+                <i class="fas fa-chevron-down float-end mt-1" id="chevron-sokajy"></i>
+            </a>
+            <div class="lisitra-sokajy" id="lisitra-sokajy">
+                <a href="#">Matematika</a>
+                <a href="#">Fizika</a>
+                <a href="#">Biôlôjia</a>
+                <a href="#">Historia</a>
+                <a href="#">Français</a>
+                <a href="#">Anglisy</a>
+            </div>
+            
+            <a href="#"><i class="fas fa-newspaper"></i> Ireo vaovao samihafa</a>
+        </div>
+    </nav>
+    
+    <!-- Contenu spécifique -->
+    <main class="votoaty" id="votoaty">
+        <div class="container-fluid">
+            <h2><i class="fas fa-chart-line me-2"></i>Ireo naoty</h2>
+            
+            <!-- Boîte de nouvelle note -->
+            <div class="boite-vaovao">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h5 class="mb-1"><i class="fas fa-bell text-warning me-2"></i>Naoty vaovao!</h5>
+                        <p class="mb-0">Nalaina ny naoty ny fanadinana Matematika</p>
+                    </div>
+                    <span class="badge bg-primary">15/20</span>
+                </div>
+            </div>
+            
+            <!-- Tableau des notes -->
+            <div class="card shadow-sm mt-4">
+                <div class="card-header bg-white">
+                    <h5 class="mb-0">Fitantanana ny naoty</h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover table-naoty">
+                            <thead>
+                                <tr>
+                                    <th>Matière</th>
+                                    <th>Note</th>
+                                    <th>Date</th>
+                                    <th>Coefficient</th>
+                                    <th>Appréciation</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Matematika</td>
+                                    <td>15/20</td>
+                                    <td>15/10/2023</td>
+                                    <td>4</td>
+                                    <td>Tsara</td>
+                                </tr>
+                                <tr>
+                                    <td>Fizika</td>
+                                    <td>12/20</td>
+                                    <td>10/10/2023</td>
+                                    <td>3</td>
+                                    <td>Mety</td>
+                                </tr>
+                                <tr>
+                                    <td>Français</td>
+                                    <td>18/20</td>
+                                    <td>12/10/2023</td>
+                                    <td>2</td>
+                                    <td>Tsara be</td>
+                                </tr>
+                                <tr>
+                                    <td>Biôlôjia</td>
+                                    <td>14/20</td>
+                                    <td>08/10/2023</td>
+                                    <td>3</td>
+                                    <td>Tsara</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <!-- Moyenne -->
+                    <div class="text-end mt-3">
+                        <span class="moyenne">Moyenne générale: 14.8/20</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+  <!-- Tongotra -->
+    <footer class="tongotra">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>EduPlateforme MG</h5>
+                    <p>Platforme fianarana malagasy</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-white me-3">Ireo fitsipika mifehy</a>
+                    <a href="#" class="text-white me-3">Tahirin-kevitra</a>
+                    <a href="#" class="text-white">Momba ny fampiasana</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+     <script>
+        // Hamenoina ny menu ho an'ny finday
+        document.getElementById('tsindry-hamburger').addEventListener('click', function() {
+            document.getElementById('menu-ankavia').classList.toggle('miseho');
+        });
+        
+        // Hamenoina ny lisitry ny sokajy fianarana
+        document.getElementById('sokajy-fianarana').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('lisitra-sokajy').classList.toggle('miseho');
+            
+            // Miova ny sary chevron
+            const chevron = document.getElementById('chevron-sokajy');
+            if (document.getElementById('lisitra-sokajy').classList.contains('miseho')) {
+                chevron.classList.remove('fa-chevron-down');
+                chevron.classList.add('fa-chevron-up');
+            } else {
+                chevron.classList.remove('fa-chevron-up');
+                chevron.classList.add('fa-chevron-down');
+            }
+        });
+        
+        // Ajanony ny votoaty rehefa mihidy ny menu
+        document.getElementById('menu-ankavia').addEventListener('transitionend', function() {
+            if (!this.classList.contains('miseho')) {
+                document.getElementById('votoaty').style.marginLeft = '0';
+            } else {
+                document.getElementById('votoaty').style.marginLeft = '250px';
+            }
+        });
+    </script>
+</body>
+</html>
